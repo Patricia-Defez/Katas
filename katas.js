@@ -18,6 +18,8 @@ var capitals = function (word) {
     }, []);
   };
 
+
+  
  //Sum of the first nth term of Series 07/10/2019
  function SeriesSum(n){
   if(n === 0) {
@@ -40,3 +42,39 @@ var capitals = function (word) {
     }  
     return s.toFixed(2)
   }
+
+
+
+  //Extract the domain name from a URL 08/10/2019
+  function domainName(url){
+    url = url.replace('http://','').replace('https://','').replace('www.','').split('.')
+    return url[0]
+  }
+
+  // with RegExp
+  function domainName(url){
+    return url.match(/(?:http(?:s)?:\/\/)?(?:w{3}\.)?([^\.]+)/i)[1];
+  }
+
+
+
+  //Find the middle element 04/11/2019
+  var gimme = function (inputArray) {
+    if(inputArray[0] > inputArray[1] && inputArray[0] > inputArray[2]){
+     return inputArray[1] > inputArray[2] ? 1 : 2;
+    }else if (inputArray[0] < inputArray[1] && inputArray[0] < inputArray[2]){
+      return inputArray[1] < inputArray[2] ? 1 : 2;
+    }else{
+      return 0;
+    }
+   };
+
+   //best
+   function gimme(a) {
+    return a.indexOf(a.concat().sort(function(a, b) { return a - b })[1])
+  }
+
+  var gimme = function (inputArray) {
+    return inputArray.indexOf(inputArray.slice(0).sort(function(a,b) { return a-b; })[1]);
+  };
+

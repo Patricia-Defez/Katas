@@ -82,3 +82,20 @@ var capitals = function (word) {
   function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
     return enteredCode === correctCode && Date.parse(currentDate) <= Date.parse(expirationDate)
   }
+
+  //Highest and Lowest
+  function highAndLow(numbers){
+    numbers = numbers.split(" ").sort((a,b)=>b-a)
+    return numbers[0] + " "+ numbers[numbers.length -1];
+  }
+  
+  function highAndLow(numbers) {
+    var arr = numbers.split(" ");
+    return Math.max.apply(null, arr) + ' ' + Math.min.apply(null, arr);
+  }
+
+  function highAndLow(numbers){
+    let arr = numbers.split(' ').map(Number);  
+    return Math.max(...arr) + ' ' + Math.min(...arr);
+  
+  }

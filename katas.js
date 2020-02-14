@@ -99,3 +99,38 @@ var capitals = function (word) {
     return Math.max(...arr) + ' ' + Math.min(...arr);
   
   }
+
+  //Remove the minimum
+
+    //altera el array original
+  function removeSmallest(numbers) {
+    var i = numbers.indexOf(Math.min.apply(null, numbers));  
+      i !== -1 && numbers.splice(i, 1);
+      return numbers;
+    } 
+
+    //no lo altera pero elimina todos
+  function removeSmallest(numbers) {
+    var i = numbers.indexOf(Math.min.apply(null, numbers));  
+      if (i !== -1){
+        return numbers.filter(e => e !== numbers[i]);
+      }
+    return numbers;
+  }
+
+  function removeSmallest(numbers) {
+    var i = numbers.indexOf(Math.min.apply(null, numbers));  
+      if( i !== -1 ){
+        return numbers.slice(0,i).concat(numbers.slice(i+1,numbers.length));
+      }
+    return numbers;
+  }
+
+
+  function removeSmallest(numbers) {
+    var i = numbers.indexOf(Math.min.apply(null, numbers));  
+     if( i !== -1 ){
+        return [...numbers.slice(0,i),...numbers.slice(i+1,numbers.length)];
+      }
+    return numbers;
+  }
